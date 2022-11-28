@@ -1,14 +1,18 @@
 import express from 'express';
 import helmet from 'helmet';
 import dotenv from 'dotenv';
-import { loggingMiddleware, configurationMiddleware, validateMiddlware } from './middleware.js';
+import {
+  loggingMiddleware,
+  configurationMiddleware,
+  validateMiddlware,
+} from './middleware.js';
 import { host, port } from './constants.js';
 import {
   getActorById,
   getActorByName,
   getActorImage,
   getMovieById,
-  getMovieByName
+  getMovieByName,
 } from './controllers/tmdbControllers.js';
 
 dotenv.config();

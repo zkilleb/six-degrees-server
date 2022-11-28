@@ -20,9 +20,13 @@ export function configurationMiddleware(req, res, next) {
 }
 
 export function validateMiddlware(req, res, next) {
-  if (process.env.IP_ADDRESS === req.connection.remoteAddress.replace('::ffff:', '')) {
+  if (
+    process.env.IP_ADDRESS ===
+    req.connection.remoteAddress.replace('::ffff:', '')
+  ) {
     next();
   } else {
     console.log(`Bad IP: ${req.connection.remoteAddress}`);
+    res.status(500).send('Internal Server Error');
   }
 }

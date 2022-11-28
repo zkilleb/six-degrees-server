@@ -14,7 +14,7 @@ export async function getActorById(req, res) {
       });
     res.status(200).json({ response });
   } catch (e) {
-    res.status(500);
+    res.status(500).send('Internal Server Error');
   }
 }
 
@@ -27,7 +27,7 @@ export async function getActorByName(req, res) {
       });
     res.status(200).json({ response });
   } catch (e) {
-    res.status(500);
+    res.status(500).send('Internal Server Error');
   }
 }
 
@@ -43,7 +43,7 @@ export async function getActorImage(req, res) {
       });
     res.status(200).json({ response });
   } catch (e) {
-    res.status(500);
+    res.status(500).send('Internal Server Error');
   }
 }
 
@@ -59,7 +59,7 @@ export async function getMovieById(req, res) {
       });
     res.status(200).json({ response });
   } catch (e) {
-    res.status(500);
+    res.status(500).send('Internal Server Error');
   }
 }
 
@@ -78,6 +78,6 @@ export async function getMovieByName(req, res) {
     });
     res.status(200).json({ response });
   } catch (e) {
-    res.status(500);
+    res.status(500).send('Internal Server Error');
   }
 }
